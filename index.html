@@ -25,11 +25,11 @@
 		<div id="wrapper" onclick="moreballs()">
 			<div id="balls">Balls</div>
 		</div>
-		
+
 		<script>
 			var balls = "Balls"
-			
-			
+			var a = 10
+		
 			function moreballs() {
 				var ran = Math.floor(Math.random() * 2) + 1;
 				if (ran==1) {
@@ -37,7 +37,9 @@
 				} else {
 					balls = balls + "s"
 				}
+				document.getElementById('balls').style.transform = "rotate("+a+"deg)"
 				document.getElementById("balls").innerHTML = balls
+				a+=10
 				
 			}
 		
