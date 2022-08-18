@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Balls</title>
+		<style>
+			#wrapper {
+				width: 192px;
+				height: 108px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+			#balls {
+				font-size: 50px;
+				text-align: center;
+				padding: 25px 0;
+				word-wrap: break-word;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper" onclick="moreballs()">
+			<div id="balls">Balls</div>
+		</div>
+		
+		<script>
+			var balls = "Balls"
+			
+			
+			function moreballs() {
+				var ran = Math.floor(Math.random() * 2) + 1;
+				if (ran==1) {
+					balls = balls + "z"
+				} else {
+					balls = balls + "s"
+				}
+				document.getElementById("balls").innerHTML = balls
+				
+			}
+		
+		</script>
+	</body>
+</html>
