@@ -30,14 +30,22 @@
 
 		<script>
 			var balls = "Balls"
-			var a = 10
-		
+			<!-- var a = 10 -->
+			
 			function moreballs() {
-				var ran = Math.floor(Math.random() * 2) + 1;
-				if (ran==1) {
-					balls = balls + "z"
+				var ran = Math.floor(Math.random() * 4) + 1;
+				var ballz = "Balls"
+				if (balls.length < 4) {
+					balls = ballz.substring(0,balls.length+1)
 				} else {
-					balls = balls + "s"
+					if (ran==1) {
+						balls += "s"
+					} else if (ran==2) {
+						balls += "z"
+					} else {
+						var len = (balls.length)-1
+						balls = balls.substring(0, len)
+					}
 				}
 				document.getElementById('balls').style.transform = "rotate("+a+"deg)"
 				document.getElementById("balls").innerHTML = balls
